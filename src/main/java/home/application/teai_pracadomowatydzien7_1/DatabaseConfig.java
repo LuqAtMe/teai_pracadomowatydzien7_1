@@ -26,7 +26,7 @@ public class DatabaseConfig {
     /**Initial method to create table in database **/
     @EventListener(ApplicationReadyEvent.class)
     public void init(){
-        String sql = "CREATE TABLE cars(car_id int, car_mark varchar (255), car_model varchar (255), car_color varchar (255), car_production int, PRIMARY KEY(car_id))";
+        String sql = "CREATE TABLE IF NOT EXISTS cars(car_id int, car_mark varchar (255), car_model varchar (255), car_color varchar (255), car_production int, PRIMARY KEY(car_id))";
         jdbcTemplate().update(sql);
     }
 
