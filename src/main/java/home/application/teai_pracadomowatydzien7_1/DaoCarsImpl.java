@@ -56,13 +56,13 @@ public class DaoCarsImpl implements DaoCars {
     //This method only convert output from DB (Map) to the List class
     private List<Car> getCars(List<Map<String, Object>> maps) {
         List<Car> carList = new ArrayList<>();
-        maps.stream().forEach(video -> carList.add(
+        maps.stream().forEach(car -> carList.add(
                 new Car(
-                        Long.parseLong(String.valueOf(video.get("car_id"))),
-                        String.valueOf(video.get("car_mark")),
-                        String.valueOf(video.get("car_model")),
-                        String.valueOf(video.get("car_color")),
-                        Long.parseLong(String.valueOf(video.get("car_production")))
+                        Long.parseLong(String.valueOf(car.get("car_id"))),
+                        String.valueOf(car.get("car_mark")),
+                        String.valueOf(car.get("car_model")),
+                        String.valueOf(car.get("car_color")),
+                        Long.parseLong(String.valueOf(car.get("car_production")))
                 )
         ));
         return carList;
